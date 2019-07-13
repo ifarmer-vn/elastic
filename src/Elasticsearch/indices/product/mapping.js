@@ -26,6 +26,12 @@ const index = {
 			title: {
 				type: "keyword"
 			},
+			price: {
+				type: "keyword"
+			},
+			id: {
+				type: "keyword"
+			},
 
 		}
 	}

@@ -13,9 +13,7 @@ async function mapping() {
 async function createDocument(doc) {
 	return client.index({
 		index: "product_v1",
-		body: {
-			doc
-		}
+		body: doc
 	}, function (err, resp, respcode) {
 		console.log(err, resp, respcode);
 	});

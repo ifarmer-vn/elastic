@@ -2,18 +2,25 @@ const productIndex = require("./src/Elasticsearch/indices/product/index");
 const product = require("./data/products-firebase-cdn-image");
 const _ = require("lodash");
 
-function createMapping() {
-	const test = await
-	schema.mappingProduct();
+async function createMapping() {
+	const test = await productIndex.mapping();
 	console.log(test);
 
 }
 
-async function main() {
+function mirateData() {
+	let count = 0;
+	_.forEach(product, async (val, key) => {
+		await  productIndex.createDocument(val);
+		count++;
 
-	_.forEach(product, (val, key) => {
-		productIndex.createDocument(val)
 	});
+	console.log("count", count);
+}
+
+async function main() {
+	createMapping()
+	mirateData();
 }
 
 main();
