@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ifarmer-vn/library#readme",
   "dependencies": {
+    "elasticsearch": "^16.3.0",
     "jasmine": "^3.4.0"
   }
 }
