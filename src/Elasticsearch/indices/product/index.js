@@ -1,6 +1,6 @@
 const schema = require("./mapping");
 const client = require("../../ES");
-const index = "product_v1";
+const index = "product_v2";
 
 async function mapping() {
 	return client.indices.create({
@@ -16,7 +16,10 @@ async function createDocument(doc) {
 		index: index,
 		body: doc
 	}, function (err, resp, respcode) {
-		console.log(err, resp, respcode);
+		if(err){
+			console.log("Test");
+			console.log(err.toJSON().response, respcode);
+		}
 	});
 }
 
