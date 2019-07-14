@@ -8,19 +8,20 @@ async function createMapping() {
 
 }
 
-function mirateData() {
+async function mirrateData() {
 	let count = 0;
-	_.forEach(product, async (val, key) => {
-		await  productIndex.createDocument(val);
+	for (pp in product) {
+		const val = product[pp];
+		await productIndex.createDocument(val);
 		count++;
+	}
 
-	});
 	console.log("count", count);
 }
 
 async function main() {
-	createMapping()
-	mirateData();
+	createMapping();
+	mirrateData();
 }
 
 main();

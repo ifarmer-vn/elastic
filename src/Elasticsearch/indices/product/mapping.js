@@ -9,19 +9,19 @@ const index = {
 				type: "keyword"
 			},
 			content: {
-				type: "keyword"
+				type: "text"
 			},
 			key: {
 				type: "keyword"
 			},
 			shortDescription: {
-				type: "keyword"
+				type: "text"
 			},
 			shortSpecs: {
-				type: "keyword"
+				type: "nested"
 			},
 			specs: {
-				type: "keyword"
+				type: "nested"
 			},
 			title: {
 				type: "keyword"
@@ -32,6 +32,9 @@ const index = {
 			id: {
 				type: "keyword"
 			},
+			created: {
+				type: "keyword"
+			}
 
 		}
 	}
