@@ -17,8 +17,8 @@ const createMapping = async () => {
 };
 
 const migrateData = () => {
-	pushDataToES(productsIndex)(products);
-	// pushDataToES(categoriesIndex)(categories);
+	pushDataToES(categoriesIndex)(categories);
+	// pushDataToES(productsIndex)(products);
 	// pushDataToES(articlesIndex)(articles);
 	// pushDataToES(productsIndex)(variants);
 };
